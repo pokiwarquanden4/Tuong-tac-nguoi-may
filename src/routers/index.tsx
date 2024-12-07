@@ -1,5 +1,6 @@
 import NavBarLayout from "../layout/NavBarLayout";
 import NonNavBarLayout from "../layout/NonNavBarLayout";
+import Chart from "../pages/Chart/chart";
 import SignUp from "../pages/CreateAccount/signUp";
 import Credit from "../pages/Credit/credit";
 import HomePage from "../pages/HomePage/homepage";
@@ -43,6 +44,11 @@ export const navLink = {
         nav: '/setting/history',
         layout: NonNavBarLayout,
         content: History
+    },
+    chart: {
+        nav: '/chart',
+        layout: NavBarLayout,
+        content: Chart
     }
 }
 
@@ -50,6 +56,10 @@ export const urlList = [
     {
         url: navLink.homePage.nav,
         content: navLink.homePage
+    },
+    {
+        url: navLink.chart.nav,
+        content: navLink.chart
     },
     {
         url: navLink.signup.nav,

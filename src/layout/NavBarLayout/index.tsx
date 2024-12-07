@@ -23,7 +23,7 @@ const NavBarLayout = ({ children }: NavBarLayoutProps) => {
         <div className="bottom-nav">
             <FontAwesomeIcon onClick={() => onClickNav(navLink.homePage.nav)} className={`${selectNav === navLink.homePage.nav ? 'navActive' : ''}`} icon={faHouse}></FontAwesomeIcon>
             <FontAwesomeIcon onClick={() => onClickNav(navLink.credit.nav)} className={`${selectNav === navLink.credit.nav ? 'navActive' : ''}`} icon={faCreditCard}></FontAwesomeIcon>
-            <FontAwesomeIcon onClick={() => onClickNav('chart')} className={`${selectNav === 'chart' ? 'navActive' : ''}`} icon={faChartSimple}></FontAwesomeIcon>
+            <FontAwesomeIcon onClick={() => onClickNav(navLink.chart.nav)} className={`${selectNav === navLink.chart.nav ? 'navActive' : ''}`} icon={faChartSimple}></FontAwesomeIcon>
             <FontAwesomeIcon onClick={() => onClickNav(navLink.setting.nav)} className={`${selectNav === navLink.setting.nav ? 'navActive' : ''}`} icon={faBars}></FontAwesomeIcon>
         </div>
     </div>
