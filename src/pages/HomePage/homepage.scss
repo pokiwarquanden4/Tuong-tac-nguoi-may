@@ -1,0 +1,193 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f8f8;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 70px 15px;
+    background: #fff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background: #ddd;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.greeting h3 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.greeting p {
+    margin: 0;
+    font-size: 14px;
+    color: #888;
+}
+
+.notifications {
+    position: relative;
+}
+
+.bell-icon {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.notification-dot {
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 14px;
+}
+
+.blance-card-container {
+    margin: 46px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.balance-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: #49A078 0px 5px 15px;
+}
+
+.balance-card p {
+    font-weight: bold;
+    margin: 0;
+    color: #666;
+}
+
+.balance-card h1 {
+    margin: 10px 0;
+    margin-bottom: 15px;
+    font-weight: bolder;
+    font-size: 24px;
+    color: #00c853;
+}
+
+.hide-button {
+    border: none;
+    background: none;
+    color: #888;
+    cursor: pointer;
+}
+
+.overflow-con {
+    height: 400px;
+    overflow: auto;
+    padding-bottom: 160px;
+}
+
+.eye-slash {
+    padding-left: 7px;
+    font-size: 13px;
+}
+
+.eye-slash-big {
+    padding-top: 35px;
+    font-size: 40px;
+}
+
+.recent-transactions {
+    display: flex;
+    flex-direction: column;
+}
+
+.recent-transactions h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.transaction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.transaction .icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-right: 16px;
+}
+
+.transaction-info {
+    display: flex;
+    align-items: center;
+}
+
+.icon.received {
+    background: #49A078;
+    box-shadow: #49A078 0px 3px 15px;
+}
+
+.icon.sent {
+    background: #998FC7;
+    box-shadow: #998FC7 0px 3px 15px;
+}
+
+.icon-received {
+    transform: rotate(135deg);
+}
+
+
+.icon-sent {
+    transform: rotate(-30deg);
+}
+
+.details p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.details small {
+    color: #888;
+}
+
+.amount p {
+    margin: 0;
+    font-size: 16px;
+}

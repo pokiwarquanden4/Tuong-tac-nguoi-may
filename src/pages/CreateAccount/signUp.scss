@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f8f8;
+}
+
+.signup-container {
+    display: flex;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.signup-box {
+    width: 350px;
+    padding: 20px 30px;
+    text-align: center;
+    position: relative;
+}
+
+.back-button {
+    position: absolute;
+    top: -9px;
+    left: 2px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #888;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.terms input {
+    margin-right: 8px;
+}
+
+.terms label {
+    font-size: 14px;
+    color: #888;
+}
+
+.terms a {
+    color: #00c853;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+.signup-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background: #00c853;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-button:disabled {
+    background: #ddd;
+    cursor: not-allowed;
+}
+
+.or-section {
+    margin: 15px 0;
+    color: #888;
+    font-size: 14px;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.social {
+    width: 30%;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.social.google {
+    background: #db4437;
+}
+
+.social.facebook {
+    background: #4267b2;
+}
+
+.social.twitter {
+    background: #1da1f2;
+}
+
+.signin-link {
+    font-size: 14px;
+    color: #888;
+}
+
+.signin-link a {
+    color: #00c853;
+    text-decoration: none;
+}
+
+.signin-link a:hover {
+    text-decoration: underline;
+}

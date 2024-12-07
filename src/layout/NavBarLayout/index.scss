@@ -1,0 +1,28 @@
+.bottom-nav {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 20px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+
+    position: fixed;
+    /* Cố định vị trí */
+    bottom: 0;
+    /* Dán vào mép dưới màn hình */
+    left: 0;
+    width: 100%;
+    /* Đảm bảo thanh điều hướng chiếm toàn bộ chiều ngang */
+    background-color: #fff;
+    /* Màu nền để hiển thị rõ ràng */
+    z-index: 1000;
+    /* Đảm bảo nó hiển thị trên các phần tử khác */
+}
+
+.navActive {
+    color: #00c853;
+}

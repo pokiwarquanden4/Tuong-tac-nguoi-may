@@ -1,0 +1,107 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f9f9f9;
+    height: 100vh;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.backButton {
+    position: absolute;
+    left: 0;
+    top: 26px;
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2d2d2d;
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.searchInput {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.clearButton {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.transactionList {
+    overflow: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.transactionItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.transactionItem+.transactionItem {
+    margin-top: 10px;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.category {
+    font-size: 14px;
+    color: #888;
+}
+
+.right {
+    font-size: 16px;
+    font-weight: bold;
+}

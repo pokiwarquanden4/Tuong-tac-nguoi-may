@@ -1,0 +1,174 @@
+.cards-container {
+    width: 100%;
+    height: 100vh;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    padding-top: 67px;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.add-button {
+    position: absolute;
+    right: 0;
+    top: -7px;
+    border: 2px solid #000;
+    /* Replace #000 with your desired color */
+    border-radius: 20px;
+    /* Optional: Rounds the corners of the button */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Creates a shadow */
+    padding: 10px 20px;
+    /* Optional: Adds padding for better appearance */
+}
+
+
+.back-button,
+.add-button {
+    background: none;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: #00c853;
+    cursor: pointer;
+}
+
+h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.card-display {
+    margin-bottom: 20px;
+}
+
+.bank-card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: linear-gradient(to right, #81d4fa, #00c853);
+    border-radius: 15px;
+    height: 223px;
+    color: #fff;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bank-name {
+    margin: 0;
+    font-size: 20px;
+}
+
+.card-number {
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.card-holder,
+.expiry-date {
+    font-size: 15px;
+}
+
+.card-logo {
+    position: absolute;
+    bottom: 14px;
+    right: 20px;
+    display: flex;
+    gap: 5px;
+}
+
+.card-logo .logo {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.card-logo .red {
+    background: #db4437;
+}
+
+.card-logo .yellow {
+    background: #f4b400;
+}
+
+.budget-section {
+    border: 1px solid #00B140;
+    border-radius: 10px;
+    padding: 20px;
+    background: #f8f8f8;
+}
+
+.budget-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.budget-item+.budget-item {
+    margin-top: 20px;
+}
+
+.bubget-info-main {
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 6px;
+}
+
+.bubget-info-sub {
+    font-size: 13px;
+}
+
+.budget-item:last-child {
+    margin-bottom: 0;
+}
+
+.budget-item p {
+    margin: 0;
+    color: #666;
+}
+
+.budget-item strong {
+    display: block;
+    font-size: 16px;
+    color: #333;
+}
+
+.amount-left {
+    padding-top: 6px;
+    font-size: 14px;
+    color: #00c853;
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.nav-item {
+    width: 25%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 20px;
+    color: #888;
+    cursor: pointer;
+}
+
+.nav-item.active {
+    color: #00c853;
+}

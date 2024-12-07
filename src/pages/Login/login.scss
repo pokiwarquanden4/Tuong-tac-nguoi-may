@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f8f8;
+}
+
+.signin-container {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f8f8f8;
+}
+
+.signin-box {
+    height: 100%;
+    margin-top: 300px;
+    width: 100%;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+.logo {
+    background: #fff;
+    color: #00B140;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 20%;
+    margin: 0 auto 20px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    border: 2px solid #00B140;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #888;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.input-group+.input-group {
+    margin-top: 30px;
+}
+
+.signin-button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background: #00c853;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.signin-button:hover {
+    background: #009c43;
+}
+
+.or-section {
+    margin: 20px 0;
+    color: #888;
+    font-size: 14px;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.social {
+    width: 30%;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logo-border {
+    font-size: 25px;
+    padding: 8px 30px;
+    background-color: #F4F4F4;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.google-icon {
+    color: #db4437;
+}
+
+.facebook-icon {
+    color: #4267b2;
+}
+
+.twitter-icon {
+    color: #1da1f2;
+}
+
+.signup-link {
+    font-size: 14px;
+    color: #888;
+}
+
+.signup-link a {
+    color: #00c853;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
