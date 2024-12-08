@@ -2,12 +2,16 @@ import React from "react";
 import styles from "./editProfile.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
+import { navLink } from "../../../routers";
 
 const EditProfile = () => {
+    const navigate = useNavigate()
+
     return (
         <div className={styles.container}>
             <header className={styles.header}>
-                <FontAwesomeIcon className={styles.backButton} icon={faChevronLeft}></FontAwesomeIcon>
+                <FontAwesomeIcon className={styles.backButton} onClick={() => navigate(navLink.setting.nav)} icon={faChevronLeft}></FontAwesomeIcon>
                 <div>Edit Profile</div>
             </header>
             <div className={styles.content_wrapper}>

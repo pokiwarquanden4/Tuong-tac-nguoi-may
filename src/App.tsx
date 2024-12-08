@@ -1,29 +1,31 @@
 // App.tsx
-import React from 'react';
+import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage/homepage';
-import Login from './pages/Login/login';
 import { urlList } from './routers';
+import { useCookies } from 'react-cookie';
+import { ReactNotifications } from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css';
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <Routes>
-        {urlList.map((url) => {
-          const Layout = url.content.layout
-          const Content = url.content.content
-          const page = (
-            <Layout>
-              <Content></Content>
-            </Layout>
-          )
+    <Fragment>
+      <ReactNotifications></ReactNotifications>
+      <Router>
+        <Routes>
+          {urlList.map((url) => {
+            const Layout = url.content.layout
+            const Content = url.content.content
+            const page = (
+              <Layout>
+                <Content></Content>
+              </Layout>
+            )
 
-          return <Route path={url.url} element={page}></Route>
-        })}
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </Router>
+            return <Route path={url.url} element={page}></Route>
+          })}
+        </Routes>
+      </Router>
+    </Fragment>
   );
 };
 

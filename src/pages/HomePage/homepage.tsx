@@ -3,6 +3,7 @@ import "./homepage.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faCreditCard, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { faArrowRight, faBars, faChartSimple, faHouse } from "@fortawesome/free-solid-svg-icons";
+import Notifications from "../../components/notify/notify";
 
 const HomePage = () => {
     const [hide, setHide] = useState(false)
@@ -28,8 +29,7 @@ const HomePage = () => {
                         <p>Good Morning!</p>
                     </div>
                 </div>
-                <div className="notifications">
-                    {/* <span className="bell-icon">🔔</span> */}
+                <div className="notifications" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     <FontAwesomeIcon className="bell-icon" icon={faBell}></FontAwesomeIcon>
                     <span className="notification-dot"></span>
                 </div>
@@ -77,6 +77,21 @@ const HomePage = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+            </div>
+
+            {/* <!-- Modal --> */}
+            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex={-1} aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h1 className="modal-title fs-5" id="staticBackdropLabel">Notifications</h1>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                            <Notifications></Notifications>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

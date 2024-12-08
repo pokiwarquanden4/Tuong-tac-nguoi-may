@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styles from "./history.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
+import { navLink } from "../../../routers";
 
 const transactions = [
     { icon: "🍎", name: "Apple Store", category: "Entertainment", amount: "- $5,99" },
@@ -19,6 +21,7 @@ const transactions = [
 ];
 
 const History = () => {
+    const navigate = useNavigate()
     const [searchQuery, setSearchQuery] = useState(""); // State to manage search input
 
     // Filter transactions based on the search query
@@ -29,7 +32,7 @@ const History = () => {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <FontAwesomeIcon className={styles.backButton} icon={faChevronLeft} />
+                <FontAwesomeIcon className={styles.backButton} onClick={() => navigate(navLink.setting.nav)} icon={faChevronLeft} />
                 <h2 className={styles.title}>History</h2>
             </div>
             <div className="input-group mb-3">

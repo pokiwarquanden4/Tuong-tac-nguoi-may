@@ -3,8 +3,11 @@ import styles from "./setting.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faUser } from "@fortawesome/free-solid-svg-icons";
 import ChangePassword from "./ChangePassword/changePassword";
+import { useNavigate } from "react-router-dom";
+import { navLink } from "../../routers";
 
 const Settings = () => {
+    const navigate = useNavigate()
     const [notifications, setNotifications] = useState(true);
     const [darkMode, setDarkMode] = useState(false);
 
@@ -24,7 +27,7 @@ const Settings = () => {
                     <div className={styles.options}>
                         <div className={styles.section}>
                             <h3>Account Settings</h3>
-                            <div className={styles.settingItem}>
+                            <div className={styles.settingItem} onClick={() => navigate(navLink.editProfile.nav)}>
                                 <p>Edit profile</p>
                                 <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
                             </div>
@@ -32,7 +35,7 @@ const Settings = () => {
                                 <p>Change password</p>
                                 <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
                             </div>
-                            <div className={styles.settingItem}>
+                            <div className={styles.settingItem} onClick={() => navigate(navLink.history.nav)}>
                                 <p>History</p>
                                 <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
                             </div>

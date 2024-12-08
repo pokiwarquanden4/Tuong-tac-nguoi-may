@@ -11,6 +11,17 @@ body {
   overflow: hidden;
 }
 
+.btn-primary {
+  background-color: #00B140;
+}
+
+input:focus {
+  border-color: #00B140 !important;
+  outline: none;
+  /* Optional: Removes the default focus outline */
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
