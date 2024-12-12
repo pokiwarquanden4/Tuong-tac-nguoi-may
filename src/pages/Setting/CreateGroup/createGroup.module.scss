@@ -1,0 +1,180 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f9f9f9;
+    height: 100vh;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.backButton {
+    position: absolute;
+    left: 0;
+    top: 26px;
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2d2d2d;
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.searchInput {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+}
+
+.clearButton {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.transactionList {
+    overflow: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.checkBox {
+    border-color: #00B140;
+}
+
+.transactionItem {
+    margin-left: 10px;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 1px solid rgba(100, 100, 111, 0.2);
+    align-items: center;
+    padding: 10px 10px;
+    border-radius: 12px;
+}
+
+.active {
+    background-color: #00B140;
+    color: #fff;
+}
+
+.peopleIcon {
+    color: #00c853
+}
+
+.add_button {
+    position: absolute;
+    right: -7px;
+    top: 10px;
+    border: 2px solid #000;
+    /* Replace #000 with your desired color */
+    border-radius: 20px;
+    /* Optional: Rounds the corners of the button */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Creates a shadow */
+    padding: 10px 20px;
+    /* Optional: Adds padding for better appearance */
+    background: none;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: #00c853;
+    cursor: pointer;
+}
+
+.list+.list {
+    margin-top: 10px;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.category {
+    font-size: 14px;
+    color: #888;
+}
+
+.right {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.bottom_header {
+    font-size: 16px;
+    color: #00B140;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+}
+
+.bottom_nav {
+    height: 120px;
+    padding: 10px 30px;
+    font-size: 20px;
+    margin-top: 20px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+
+    position: fixed;
+    /* Cố định vị trí */
+    bottom: 0;
+    /* Dán vào mép dưới màn hình */
+    left: 0;
+    width: 100%;
+    /* Đảm bảo thanh điều hướng chiếm toàn bộ chiều ngang */
+    background-color: #fff;
+    /* Màu nền để hiển thị rõ ràng */
+    z-index: 1000;
+    /* Đảm bảo nó hiển thị trên các phần tử khác */
+}
+
+.navActive {
+    color: #00c853;
+}

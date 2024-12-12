@@ -39,19 +39,12 @@ const Settings = () => {
                                 <p>History</p>
                                 <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
                             </div>
-                            <div className={styles.settingItem}>
-                                <p>Push notifications</p>
-                                <label className={styles.switch}>
-                                    <input
-                                        type="checkbox"
-                                        checked={notifications}
-                                        onChange={() => setNotifications(!notifications)}
-                                    />
-                                    <span className={styles.slider}></span>
-                                </label>
+                            <div className={styles.settingItem} onClick={() => navigate(navLink.groups.nav)}>
+                                <p>Groups</p>
+                                <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
                             </div>
                             <div className={styles.settingItem}>
-                                <p>Dark mode</p>
+                                <p>Family mode</p>
                                 <label className={styles.switch}>
                                     <input
                                         type="checkbox"

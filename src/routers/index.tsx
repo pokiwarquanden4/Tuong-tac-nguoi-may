@@ -5,6 +5,9 @@ import SignUp from "../pages/CreateAccount/signUp";
 import Credit from "../pages/Credit/credit";
 import HomePage from "../pages/HomePage/homepage";
 import Login from "../pages/Login/login";
+import AddGroup from "../pages/Setting/CreateGroup/AddGroup/AddGroup";
+import Groups from "../pages/Setting/CreateGroup/createGroup";
+import GroupDetails from "../pages/Setting/CreateGroup/GroupDetails/GroupDetails";
 import EditProfile from "../pages/Setting/EditProfile/editProfile";
 import History from "../pages/Setting/History/history";
 import Setting from "../pages/Setting/setting";
@@ -45,6 +48,21 @@ export const navLink = {
         layout: NonNavBarLayout,
         content: History
     },
+    groups: {
+        nav: '/setting/groups',
+        layout: NonNavBarLayout,
+        content: Groups
+    },
+    groupsDetails: {
+        nav: '/setting/groups/details',
+        layout: NonNavBarLayout,
+        content: GroupDetails
+    },
+    addGroup: {
+        nav: '/setting/groups/add',
+        layout: NonNavBarLayout,
+        content: AddGroup
+    },
     chart: {
         nav: '/chart',
         layout: NavBarLayout,
@@ -82,7 +100,19 @@ export const urlList = [
         content: navLink.history
     },
     {
+        url: navLink.groups.nav,
+        content: navLink.groups
+    },
+    {
         url: navLink.login.nav,
         content: navLink.login
+    },
+    {
+        url: navLink.groupsDetails.nav,
+        content: navLink.groupsDetails
+    },
+    {
+        url: navLink.addGroup.nav,
+        content: navLink.addGroup
     }
 ]

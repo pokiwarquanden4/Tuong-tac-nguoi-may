@@ -11,6 +11,10 @@ body {
   overflow: hidden;
 }
 
+* {
+  scrollbar-color: transparent transparent;
+}
+
 .btn-primary {
   background-color: #00B140;
 }
