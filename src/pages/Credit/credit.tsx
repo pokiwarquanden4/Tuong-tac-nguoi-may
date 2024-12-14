@@ -3,8 +3,11 @@ import styles from "./credit.module.scss";
 import AddCard from "../../components/addCard/addCard";
 import { useSelector } from "react-redux";
 import { RootState } from "../../config/store";
+import { useNavigate } from "react-router-dom";
+import { navLink } from "../../routers";
 
 const Credit = () => {
+    const navigate = useNavigate()
     const mode = useSelector((state: RootState) => state.mode.isFamilyMode)
 
     return (
@@ -109,8 +112,8 @@ const Credit = () => {
                         </div>
                         <div className="modal-footer">
                             {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
-                            <button type="button" className="btn btn-outline-secondary">Scan Card</button>
-                            <button type="button" className="btn btn-primary">Add Card</button>
+                            <button data-bs-dismiss="modal" type="button" className="btn btn-outline-secondary">Scan Card</button>
+                            <button data-bs-dismiss="modal" type="button" className="btn btn-primary">Add Card</button>
                         </div>
                     </div>
                 </div>

@@ -132,11 +132,11 @@ h2 {
     color: #888;
 }
 
-.signup-link a {
+.signup-link div {
     color: var(--primary-color);
     text-decoration: none;
 }
 
-.signup-link a:hover {
+.signup-link div:hover {
     text-decoration: underline;
 }

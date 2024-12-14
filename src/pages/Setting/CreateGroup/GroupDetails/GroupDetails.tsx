@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./GroupDetails.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faChevronLeft, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -9,14 +9,33 @@ const GroupDetails = () => {
     const navigate = useNavigate();
 
     // Example data array for group members
-    const groupMembers: {
-        name: string,
-        email: string,
-        vertified: boolean
-    }[] = [
-            { name: "Nguyen Vu Anh Quan", email: "pokiwarquanden1@gmail.com", vertified: false },
-            { name: "Tran Minh Quang", email: "pokiwarquanden4@gmail.com", vertified: true },
-        ];
+    const [groupMembers, setGroupMembers] = useState([
+        { name: "Nguyen Vu Anh Quan", email: "pokiwarquanden1@gmail.com", vertified: false },
+        { name: "Tran Minh Quang", email: "pokiwarquanden4@gmail.com", vertified: true },
+    ]);
+    // State to manage new member inputs
+    const [newMember, setNewMember] = useState({ name: "", email: "" });
+    const [deleteId, setDeleteId] = useState<number | undefined>(undefined)
+
+    // Handle input changes for new member
+    const handleNewMemberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setNewMember({ ...newMember, [name]: value });
+    };
+
+    // Add new member to the group
+    const handleAddMember = () => {
+        if (newMember.name.trim() && newMember.email.trim()) {
+            setGroupMembers([...groupMembers, { ...newMember, vertified: false }]);
+            setNewMember({ name: "", email: "" }); // Reset the form
+        }
+    };
+
+    // Remove a member
+    const handleRemoveMember = (index: number) => {
+        const updatedMembers = groupMembers.filter((_, i) => i !== index);
+        setGroupMembers(updatedMembers);
+    };
 
     return (
         <div className={styles.container}>
@@ -47,7 +66,7 @@ const GroupDetails = () => {
                                             <FontAwesomeIcon className={`${styles.check}`} icon={faCheck}></FontAwesomeIcon>
                                         </div>
                                     </div>
-                                    <FontAwesomeIcon data-bs-toggle="modal" data-bs-target="#staticBackdrop" className={styles.deleteButton} icon={faTrash}></FontAwesomeIcon>
+                                    <FontAwesomeIcon onClick={() => setDeleteId(index)} data-bs-toggle="modal" data-bs-target="#staticBackdrop" className={styles.deleteButton} icon={faTrash}></FontAwesomeIcon>
                                 </label>
                                 <input
                                     id={`fullname-${index}`}
@@ -76,7 +95,7 @@ const GroupDetails = () => {
                         <div className="modal-footer">
                             {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
                             <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" style={{ backgroundColor: '#FF4C4C' }} className="btn btn-primary" data-bs-dismiss="modal">Delete</button>
+                            <button onClick={() => handleRemoveMember(deleteId as number)} type="button" style={{ backgroundColor: '#FF4C4C' }} className="btn btn-primary" data-bs-dismiss="modal">Delete</button>
                         </div>
                     </div>
                 </div>
@@ -102,36 +121,67 @@ const GroupDetails = () => {
                 </div>
             </div>
 
-            {/* Add member */}
-            <div className="modal fade" id="addmember" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex={-1} aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            {/* Add member modal */}
+            <div
+                className="modal fade"
+                id="addmember"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabIndex={-1}
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+            >
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h1 className="modal-title fs-5" id="staticBackdropLabel">New member</h1>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <h1 className="modal-title fs-5" id="staticBackdropLabel">
+                                New member
+                            </h1>
+                            <button
+                                type="button"
+                                className="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
                         </div>
                         <div className="modal-body">
                             <div className={styles.inputGroup}>
-                                <label htmlFor="currentPassword">Name</label>
+                                <label htmlFor="name">Name</label>
                                 <input
+                                    name="name"
                                     type="text"
-                                    placeholder=""
+                                    value={newMember.name}
+                                    onChange={handleNewMemberChange}
                                     required
                                 />
                             </div>
                             <div className={styles.inputGroup}>
-                                <label htmlFor="currentPassword">Email</label>
+                                <label htmlFor="email">Email</label>
                                 <input
-                                    type="text"
-                                    placeholder=""
+                                    name="email"
+                                    type="email"
+                                    value={newMember.email}
+                                    onChange={handleNewMemberChange}
                                     required
                                 />
                             </div>
                         </div>
                         <div className="modal-footer">
-                            {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
-                            <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" className="btn btn-primary" data-bs-dismiss="modal">Save</button>
+                            <button
+                                type="button"
+                                className="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                type="button"
+                                className="btn btn-primary"
+                                onClick={handleAddMember}
+                                data-bs-dismiss="modal"
+                            >
+                                Save
+                            </button>
                         </div>
                     </div>
                 </div>

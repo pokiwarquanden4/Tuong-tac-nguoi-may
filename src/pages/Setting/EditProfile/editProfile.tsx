@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { navLink } from "../../../routers";
+import { showAlert } from "../../../components/alert/notify";
 
 const EditProfile = () => {
     const navigate = useNavigate()
@@ -20,25 +21,26 @@ const EditProfile = () => {
                         <div className={styles.profilePicture}></div>
                         <button className={styles.changePictureButton}>Change Picture</button>
                     </div>
-                    <form className={styles.form}>
-                        <div className={styles.inputGroup}>
-                            <label htmlFor="nickname">What do we call you</label>
-                            <input id="nickname" type="text" defaultValue="Quang" />
-                        </div>
-                        <div className={styles.inputGroup}>
-                            <label htmlFor="fullname">Full name</label>
-                            <input id="fullname" type="text" defaultValue="Tran Minh Quang" />
-                        </div>
-                        <div className={styles.inputGroup}>
-                            <label htmlFor="phone">Phone Number</label>
-                            <input id="phone" type="text" defaultValue="+14987889999" />
-                        </div>
-                        <div className={styles.inputGroup}>
-                            <label htmlFor="email">Email address</label>
-                            <input id="email" type="email" defaultValue="abc@xyz.com" />
-                        </div>
-                        <button type="submit" className={styles.updateButton}>Update</button>
-                    </form>
+                    <div className={styles.inputGroup}>
+                        <label htmlFor="nickname">What do we call you</label>
+                        <input id="nickname" type="text" defaultValue="Quang" />
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <label htmlFor="fullname">Full name</label>
+                        <input id="fullname" type="text" defaultValue="Tran Minh Quang" />
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <label htmlFor="phone">Phone Number</label>
+                        <input id="phone" type="text" defaultValue="+14987889999" />
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <label htmlFor="email">Email address</label>
+                        <input id="email" type="email" defaultValue="abc@xyz.com" />
+                    </div>
+                    <button onClick={() => {
+                        navigate(navLink.setting.nav)
+                        showAlert('Success')
+                    }} type="submit" className={styles.updateButton}>Update</button>
                 </div>
             </div>
         </div>

@@ -133,6 +133,11 @@ input {
     }
 }
 
+.group_header_vl {
+    display: flex;
+    align-items: center;
+}
+
 .group_header {
     display: flex;
     justify-content: space-between;
@@ -141,6 +146,25 @@ input {
 
 .deleteButton {
     color: #FF4C4C;
+}
+
+.check_border {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    color: #fff;
+}
+
+.check_active {
+    background-color: var(--primary-color);
+}
+
+.check_nonactive {
+    background-color: lightgray;
 }
 
 .noData {

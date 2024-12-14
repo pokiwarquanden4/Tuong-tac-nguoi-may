@@ -56,7 +56,7 @@ const SignIn = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
-                    <button type="submit" className="signin-button">
+                    <button className="signin-button">
                         SIGN IN
                     </button>
                 </form>
@@ -73,7 +73,7 @@ const SignIn = () => {
                     </div>
                 </div>
                 <div className="signup-link">
-                    Don’t have an account? <a href="/signup">SIGN UP</a>
+                    Don’t have an account? <div onClick={() => navigate(navLink.signup.nav)}>SIGN UP</div>
                 </div>
             </div>
         </div>
