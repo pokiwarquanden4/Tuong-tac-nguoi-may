@@ -1,3 +1,5 @@
+@use '../../config/variable.scss';
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -24,7 +26,7 @@ body {
 
 .logo {
     background: #fff;
-    color: #00B140;
+    color: var(--primary-color);
     font-size: 40px;
     width: 50px;
     height: 50px;
@@ -33,7 +35,7 @@ body {
     margin: 0 auto 20px;
     margin-bottom: 50px;
     font-weight: bold;
-    border: 2px solid #00B140;
+    border: 2px solid var(--primary-color);
 }
 
 h2 {
@@ -70,7 +72,7 @@ h2 {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    background: #00c853;
+    background: var(--primary-color);
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -78,7 +80,7 @@ h2 {
 }
 
 .signin-button:hover {
-    background: #009c43;
+    background: var(--primary-color);
 }
 
 .or-section {
@@ -131,7 +133,7 @@ h2 {
 }
 
 .signup-link a {
-    color: #00c853;
+    color: var(--primary-color);
     text-decoration: none;
 }
 

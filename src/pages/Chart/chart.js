@@ -24,7 +24,9 @@ const ChartA = () => {
     })
 
     useEffect(() => {
-        const datasets = chartData.datasets
+        const currentData = tags.find((tag) => tag.label === currentTag).data
+
+        const datasets = currentData.datasets
         const categories = []
         let isShow = false
         datasets.forEach((data) => {
@@ -38,10 +40,10 @@ const ChartA = () => {
 
         setIsShow(isShow)
         setCategories({
-            time: chartData.labels[barId],
+            time: currentData.labels[barId],
             categories: categories
         })
-    }, [barId, chartData])
+    }, [barId, currentTag])
 
     const handleClick = useCallback((e, con) => {
         if (!con[0]) return
@@ -49,6 +51,44 @@ const ChartA = () => {
 
         setBarId(index)
     }, [])
+
+    useEffect(() => {
+        const currentData = tags.find((tag) => tag.label === currentTag).data
+
+        const blankDataSet = {
+            label: '',
+            backgroundColor: '#D9D9D9',
+            data: [],
+            borderRadius: 10,
+        }
+
+        const newDataSet = currentData.datasets.map((item) => {
+            const dataList = [...item.data]
+            dataList.forEach((data, index) => {
+                if (!blankDataSet.data[index]) blankDataSet.data[index] = 0
+                if (barId !== index) {
+                    dataList[index] = 0
+                    blankDataSet.data[index] += data
+                }
+            })
+
+            return {
+                label: item.label,
+                backgroundColor: item.backgroundColor,
+                data: dataList,
+                borderRadius: item.borderRadius,
+            }
+        })
+
+        newDataSet.push(blankDataSet)
+
+        const newData = {
+            labels: currentData.labels,
+            datasets: newDataSet
+        }
+
+        setChartData(newData)
+    }, [barId, currentTag])
 
     function getRandomDateTimeIn2024() {
         const start = new Date("2024-01-01T00:00:00");
@@ -80,7 +120,6 @@ const ChartA = () => {
                             id={id}
                             className={`${styles.tag} ${currentTag === tag.label ? styles.tag_active : ''}`}
                             onClick={() => {
-                                setChartData(tag.data)
                                 setCurrentTag(tag.label)
                             }}
                         >

@@ -5,7 +5,7 @@ export const showAlert = (message: string | React.ReactNode | React.FunctionComp
         message: message,
         type: type || "default",
         insert: options?.insert || "bottom",
-        container: options?.container || "bottom-center",
+        container: options?.container || "top-center",
         animationIn: ["animate__animated", "animate__fadeIn"],
         animationOut: ["animate__animated", "animate__fadeOut"],
         dismiss: {

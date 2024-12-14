@@ -1,3 +1,5 @@
+@use '../../config/variable.scss';
+
 .container {
     display: flex;
     flex-direction: column;
@@ -20,7 +22,7 @@
     border: none;
     font-size: 15px;
     font-weight: bold;
-    color: #00c853;
+    color: var(--primary-color);
     position: absolute;
     right: 0;
     top: 17px;
@@ -49,7 +51,7 @@
 
 .tag {
     padding: 7px 20px;
-    background-color: #00B140;
+    background-color: var(--primary-color);
     color: #fff;
     border-radius: 20px;
 
@@ -68,7 +70,7 @@
 .category {
     text-wrap: nowrap;
     padding: 7px 20px;
-    background-color: #00B140;
+    background-color: var(--primary-color);
     color: #fff;
     border-radius: 20px;
 
@@ -134,8 +136,8 @@
 }
 
 .icon.received {
-    background: #49A078;
-    box-shadow: #49A078 0px 3px 15px;
+    background: var(--primary-color);
+    box-shadow: var(--primary-color) 0px 3px 15px;
 }
 
 .icon.sent {
@@ -168,8 +170,8 @@
 
 .tag_active {
     background-color: #fff;
-    color: #00B140;
-    border: 1px #00B140 solid;
+    color: var(--primary-color);
+    border: 1px var(--primary-color) solid;
 }
 
 .noData {

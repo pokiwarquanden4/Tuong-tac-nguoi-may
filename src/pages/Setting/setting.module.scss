@@ -1,3 +1,5 @@
+@use '../../config/variable.scss';
+
 .container {
     max-width: 400px;
     margin: auto;
@@ -30,7 +32,7 @@
     align-items: start;
     width: 100%;
     min-height: 300px;
-    background-color: #00c853;
+    background-color: var(--primary-color);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     color: white;
@@ -128,7 +130,7 @@
 }
 
 input:checked+.slider {
-    background-color: #00c853;
+    background-color: var(--primary-color);
 }
 
 input:checked+.slider:before {
@@ -151,5 +153,5 @@ input:checked+.slider:before {
 }
 
 .navItem.active {
-    color: #00c853;
+    color: var(--primary-color);
 }

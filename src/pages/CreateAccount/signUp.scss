@@ -1,3 +1,5 @@
+@use '../../config/variable.scss';
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -71,7 +73,7 @@ h2 {
 }
 
 .terms a {
-    color: #00c853;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
@@ -83,7 +85,7 @@ h2 {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    background: #00c853;
+    background: var(--primary-color);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -135,7 +137,7 @@ h2 {
 }
 
 .signin-link a {
-    color: #00c853;
+    color: var(--primary-color);
     text-decoration: none;
 }
 

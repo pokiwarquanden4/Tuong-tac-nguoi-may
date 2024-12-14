@@ -5,6 +5,7 @@ import { faChevronRight, faUser } from "@fortawesome/free-solid-svg-icons";
 import ChangePassword from "./ChangePassword/changePassword";
 import { useNavigate } from "react-router-dom";
 import { navLink } from "../../routers";
+import { showAlert } from "../../components/alert/notify";
 
 const Settings = () => {
     const navigate = useNavigate()
@@ -47,6 +48,15 @@ const Settings = () => {
                                 <p>Family mode</p>
                                 <label className={styles.switch}>
                                     <input
+                                        onClick={() => {
+                                            if (document.documentElement.style.getPropertyValue('--primary-color') === '#FF5733') {
+                                                document.documentElement.style.setProperty('--primary-color', '#00B140');
+                                                showAlert('Family mode off')
+                                            } else {
+                                                document.documentElement.style.setProperty('--primary-color', '#FF5733');
+                                                showAlert('Family mode on')
+                                            }
+                                        }}
                                         type="checkbox"
                                         checked={darkMode}
                                         onChange={() => setDarkMode(!darkMode)}
