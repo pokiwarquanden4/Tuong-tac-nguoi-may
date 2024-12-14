@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./setting.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faUser } from "@fortawesome/free-solid-svg-icons";
@@ -6,11 +6,24 @@ import ChangePassword from "./ChangePassword/changePassword";
 import { useNavigate } from "react-router-dom";
 import { navLink } from "../../routers";
 import { showAlert } from "../../components/alert/notify";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../config/store";
+import { setMode } from "../../slice/modeSlice";
 
 const Settings = () => {
     const navigate = useNavigate()
+    const mode = useSelector((state: RootState) => state.mode.isFamilyMode)
+    const dispatch = useDispatch()
     const [notifications, setNotifications] = useState(true);
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(mode);
+
+    useEffect(() => {
+        if (!mode) {
+            document.documentElement.style.setProperty('--primary-color', '#00B140');
+        } else {
+            document.documentElement.style.setProperty('--primary-color', '#FF5733');
+        }
+    }, [mode])
 
     return (
         <div className={styles.container}>
@@ -49,11 +62,10 @@ const Settings = () => {
                                 <label className={styles.switch}>
                                     <input
                                         onClick={() => {
-                                            if (document.documentElement.style.getPropertyValue('--primary-color') === '#FF5733') {
-                                                document.documentElement.style.setProperty('--primary-color', '#00B140');
+                                            dispatch(setMode(!mode))
+                                            if (mode) {
                                                 showAlert('Family mode off')
                                             } else {
-                                                document.documentElement.style.setProperty('--primary-color', '#FF5733');
                                                 showAlert('Family mode on')
                                             }
                                         }}

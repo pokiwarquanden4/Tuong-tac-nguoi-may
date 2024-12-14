@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faCreditCard, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { faArrowRight, faBars, faChartSimple, faHouse } from "@fortawesome/free-solid-svg-icons";
 import Notifications from "../../components/notify/notify";
+import { useSelector } from "react-redux";
+import { RootState } from "../../config/store";
 
 const transactionData = {
     0: [
@@ -38,6 +40,7 @@ const transactionData = {
 
 
 const HomePage = () => {
+    const mode = useSelector((state: RootState) => state.mode.isFamilyMode)
     const [transaction, setTransaction] = useState(transactionData[0])
     const [hide, setHide] = useState(false)
 
@@ -53,7 +56,15 @@ const HomePage = () => {
                 <div className="profile">
                     <div className="avatar"></div>
                     <div className="greeting">
-                        <h3>Quang</h3>
+                        <h3>
+                            {
+                                mode
+                                    ?
+                                    'Family 1'
+                                    :
+                                    'Quang'
+                            }
+                        </h3>
                         <p>Good Morning!</p>
                     </div>
                 </div>
@@ -67,7 +78,15 @@ const HomePage = () => {
                 setHide(!hide)
             }}>
                 <div className="balance-card">
-                    <p>Your Total Balance</p>
+                    <p>
+                        {
+                            mode
+                                ?
+                                'Family total balance'
+                                :
+                                'Your total balance'
+                        }
+                    </p>
                     {
                         !hide
                             ?
@@ -87,12 +106,19 @@ const HomePage = () => {
             <div className="recent-transactions">
                 <div className='transactions_header_homepage'>
                     <div className="recent">Recent</div>
-                    <select onChange={handleSelectChange} className="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option selected>Your transaction</option>
-                        <option value="1">Quang's transaction</option>
-                        <option value="2">Hiep's transaction</option>
-                        <option value="3">Thuy's transaction</option>
-                    </select>
+                    {
+                        mode
+                            ?
+
+                            <select onChange={handleSelectChange} className="form-select form-select-sm" aria-label=".form-select-sm example">
+                                <option selected>Your transaction</option>
+                                <option value="1">Quang's transaction</option>
+                                <option value="2">Hiep's transaction</option>
+                                <option value="3">Thuy's transaction</option>
+                            </select>
+                            :
+                            undefined
+                    }
                 </div>
                 <div className="overflow-con">
                     {transaction.map((transaction) => (

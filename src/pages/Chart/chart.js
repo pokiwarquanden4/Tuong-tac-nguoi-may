@@ -4,19 +4,42 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faChevronLeft, faDownload } from "@fortawesome/free-solid-svg-icons";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
-import { dayData, monthData, weekData, yearData } from "./charData";
+import { dayData0, dayData1, dayData2, dayData3, monthData0, monthData1, monthData2, monthData3, weekData0, weekData1, weekData2, weekData3, yearData0, yearData1, yearData2, yearData3 } from "./charData";
+import { useSelector } from "react-redux";
 
-const tags = [
-    { label: '24h', data: dayData },
-    { label: 'Week', data: weekData },
-    { label: 'Month', data: monthData },
-    { label: 'Year', data: yearData }
-];
+const tagList = {
+    0: [
+        { label: '24h', data: dayData0 },
+        { label: 'Week', data: weekData0 },
+        { label: 'Month', data: monthData0 },
+        { label: 'Year', data: yearData0 }
+    ],
+    1: [
+        { label: '24h', data: dayData1 },
+        { label: 'Week', data: weekData1 },
+        { label: 'Month', data: monthData1 },
+        { label: 'Year', data: yearData1 }
+    ],
+    2: [
+        { label: '24h', data: dayData3 },
+        { label: 'Week', data: weekData3 },
+        { label: 'Month', data: monthData3 },
+        { label: 'Year', data: yearData3 }
+    ],
+    3: [
+        { label: '24h', data: dayData2 },
+        { label: 'Week', data: weekData2 },
+        { label: 'Month', data: monthData2 },
+        { label: 'Year', data: yearData2 }
+    ],
+}
 
 const ChartA = () => {
+    const mode = useSelector((state) => state.mode.isFamilyMode)
     const [currentTag, setCurrentTag] = useState('24h')
-    const [chartData, setChartData] = useState(dayData)
+    const [chartData, setChartData] = useState(dayData0)
     const [barId, setBarId] = useState(0)
+    const [tagData, setTagData] = useState(tagList[0])
     const [isShow, setIsShow] = useState(true)
     const [categories, setCategories] = useState({
         time: '',
@@ -24,7 +47,7 @@ const ChartA = () => {
     })
 
     useEffect(() => {
-        const currentData = tags.find((tag) => tag.label === currentTag).data
+        const currentData = tagData.find((tag) => tag.label === currentTag).data
 
         const datasets = currentData.datasets
         const categories = []
@@ -43,7 +66,7 @@ const ChartA = () => {
             time: currentData.labels[barId],
             categories: categories
         })
-    }, [barId, currentTag])
+    }, [barId, currentTag, tagData])
 
     const handleClick = useCallback((e, con) => {
         if (!con[0]) return
@@ -53,7 +76,7 @@ const ChartA = () => {
     }, [])
 
     useEffect(() => {
-        const currentData = tags.find((tag) => tag.label === currentTag).data
+        const currentData = tagData.find((tag) => tag.label === currentTag).data
 
         const blankDataSet = {
             label: '',
@@ -88,7 +111,7 @@ const ChartA = () => {
         }
 
         setChartData(newData)
-    }, [barId, currentTag])
+    }, [barId, currentTag, tagData])
 
     function getRandomDateTimeIn2024() {
         const start = new Date("2024-01-01T00:00:00");
@@ -104,6 +127,11 @@ const ChartA = () => {
         return `${year}-${month}-${day} ${hours}:${minutes}`;
     }
 
+    const handleSelectChange = (event) => {
+        const selectedValue = parseInt(event.target.value, 10) // Cast to keyof transactionData
+        setTagData(tagList[selectedValue || 0]); // Update the transaction array
+    };
+
     return (
         <div className={styles.container}>
             <div className={styles.header}>
@@ -115,7 +143,7 @@ const ChartA = () => {
             </div>
             <div className="input-group mb-3 w-100">
                 <div className={styles.tags}>
-                    {tags.map((tag, id) => {
+                    {tagData.map((tag, id) => {
                         return <div
                             id={id}
                             className={`${styles.tag} ${currentTag === tag.label ? styles.tag_active : ''}`}
@@ -166,6 +194,18 @@ const ChartA = () => {
                 </div>
                 <div className={styles.date}>
                     {categories.time}
+                    {
+                        mode
+                            ?
+                            <select onChange={handleSelectChange} className={`${styles.userSelect} form-select form-select-sm`} aria-label=".form-select-sm example">
+                                <option selected>Your transaction</option>
+                                <option value="1">Quang's transaction</option>
+                                <option value="2">Hiep's transaction</option>
+                                <option value="3">Thuy's transaction</option>
+                            </select>
+                            :
+                            undefined
+                    }
                 </div>
                 <div className={styles.transactions}>
                     {isShow

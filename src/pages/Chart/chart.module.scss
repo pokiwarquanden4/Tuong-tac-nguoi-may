@@ -92,9 +92,16 @@
 }
 
 .date {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     margin-top: 30px;
     font-weight: bolder;
     font-size: 25px;
+}
+
+.userSelect {
+    width: 200px;
 }
 
 .transactions {

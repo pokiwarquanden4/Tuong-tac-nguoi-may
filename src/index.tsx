@@ -3,16 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux'
 import { CookiesProvider } from 'react-cookie';
+import { store } from './config/store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <CookiesProvider>
-      <App />
-    </CookiesProvider>
+    <Provider store={store}>
+      <CookiesProvider>
+        <App />
+      </CookiesProvider>
+    </Provider>
   </React.StrictMode>
 );
 
