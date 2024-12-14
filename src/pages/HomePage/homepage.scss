@@ -8,17 +8,18 @@ body {
 }
 
 .dashboard-container {
+    overflow: auto;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
     max-width: 400px;
     margin: 0 auto;
-    padding: 70px 15px;
+    padding: 15px 15px 70px;
     background: #fff;
 }
 
 .header {
+    flex: 0.2;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -69,7 +70,8 @@ body {
 }
 
 .blance-card-container {
-    margin: 46px 0;
+    flex: 0.3;
+    margin: 20px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,7 +116,7 @@ body {
 .overflow-con {
     height: 400px;
     overflow: auto;
-    padding-bottom: 160px;
+    // padding-bottom: 160px;
 }
 
 .eye-slash {
@@ -128,6 +130,7 @@ body {
 }
 
 .recent-transactions {
+    flex: 0.5;
     display: flex;
     flex-direction: column;
 }

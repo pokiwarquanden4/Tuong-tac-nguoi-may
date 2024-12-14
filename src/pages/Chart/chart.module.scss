@@ -3,9 +3,10 @@
 .container {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 10px 20px;
     background-color: #f9f9f9;
     height: 100vh;
+    overflow: auto;
 }
 
 .header {
@@ -14,7 +15,6 @@
     justify-content: center;
     padding-top: 20px;
     align-items: center;
-    margin-bottom: 10px;
 }
 
 .add_button {
